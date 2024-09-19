@@ -4,6 +4,7 @@ import { Keypair } from "@solana/web3.js";
 import { generateMnemonic } from "bip39";
 import { useState } from "react";
 import bs58 from "bs58";
+import Link from "next/link";
 
 type walletType = {
   publicKey: string;
@@ -73,8 +74,12 @@ export default function Home() {
             <p className="text-4xl font-bold">Cohort Assignment</p>
           </div>
 
-          {/* button */}
-          <div className="flex w-full justify-end">
+          {/* button | link*/}
+          <div className="flex w-full justify-between items-center">
+            <Link className="text-lg hover:underline" href="/hd-wallet">
+              Hd Wallet
+            </Link>
+
             <button
               onClick={createWalletHandler}
               className="bg-white/[12%] px-8 py-3 font-semibold rounded-md"
